@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@500;700;800&display=swap');
 /* reset */
 /* link to source: https://piccalil.li/blog/a-more-modern-css-reset/ */
 
@@ -7,6 +7,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Prevent font size inflation */
@@ -30,7 +33,8 @@ ol[role='list'] {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
   line-height: 1.5;
 }
 
@@ -66,16 +70,6 @@ textarea, select {
   font-size: inherit;
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10em;
-}
-
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
-}
-
 /* ######### */
 
 /* resusable components */
@@ -104,7 +98,91 @@ textarea:not([rows]) {
     
 }
 
+/* typography */
+
+:root {
+    /* font sizes */
+    --font-size700: 72px;
+    --font-size600: 56px;
+    --font-size500: 32px;
+    --font-size400: 24px;
+    --font-size300: 18px;
+    --font-size200: 16px;
+
+    --line-height100: 100%;
+    --line-height130: 130%;
+
+    --letter-spacing0: 0px;
+
+    --font-weight800: 800;
+    --font-weight700: 700;
+    --font-weight500: 500;
+
+
+    --text-preset-1: var(--font-weight800) var(--font-size700) var(--line-height100) var(--letter-spacing0);
+
+    --text-preset-2: var(--font-weight800) var(--font-size600) var(--line-height100) var(--letter-spacing0);
+
+    --text-preset-3: var(--font-weight700) var(--font-size500) var(--line-height130) var(--letter-spacing0);
+
+    --text-preset-4: var(--font-weight700) var(--font-size400) var(--line-height130) var(--letter-spacing0);
+    
+    --text-preset-5-bold: var(--font-weight700) var(--font-size300) var(--line-height130) var(--letter-spacing0);
+    
+    --text-preset-5-medium: var(--font-weight500) var(--font-size300) var(--line-height130) var(--letter-spacing0);
+    
+    --text-preset-6-bold: var(--font-weight700) var(--font-size200) var(--line-height130) var(--letter-spacing0);
+    
+    --text-preset-6-medium: var(--font-weight500) var(--font-size200) var(--line-height130) var(--letter-spacing0);
+    
+}
+
+
+/* spacing */
+
+:root {
+    --spacing-0: 0px;
+    --spacing-100: 8px;
+    --spacing-200: 16px;
+    --spacing-300: 24px;
+    --spacing-400: 32px;
+    --spacing-1000: 80px;
+}
+
+
 /* main */
+
+
+.mainContainer, main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer {
+    max-width: 736px;
+    margin: 0 auto;
+    background: var(--clr-gradient-blue700);
+}
+
+
+
+.mainPart {
+    width: 50%;
+}
+
+.mainPartOne {
+    background-color: red;
+}
+
+
+
+.statsContainer {
+    width: 100%;
+    flex-flow: column wrap;
+}
+
+
 
 /* attribution */
 .attribution {
